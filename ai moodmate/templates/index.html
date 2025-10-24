@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Emotion + Text Mood Recommender 🎵</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Emotion Detection + Music Recommendation</h1>
+
+  <!-- Webcam Section -->
+  <div class="section">
+    <h2>🎥 Live Webcam Emotion</h2>
+    <img src="{{ url_for('video_feed') }}" width="640" height="480">
+  </div>
+
+  <!-- Text Input Section -->
+  <div class="section">
+    <h2>💬 Text Mood Input</h2>
+    <form id="moodForm">
+      <input type="text" id="userText" name="text" placeholder="Type how you feel..." />
+      <button type="submit">Get Song Recommendations</button>
+    </form>
+  </div>
+
+  <!-- Emotion & Songs Display -->
+  <div id="result">
+    <h3>Detected Emotion: <span id="emotion">Waiting...</span></h3>
+    <h4>Recommended Songs:</h4>
+    <ul id="songs"></ul>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
